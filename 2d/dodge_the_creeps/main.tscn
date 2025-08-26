@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id="1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1914, 2, 0, 0, 0, 0, 1914, 1023, 0, 0, 0, 0, -2, 1023, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
 
@@ -27,10 +27,10 @@ color = Color(0.219608, 0.372549, 0.380392, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_veqnc")]
 
+[node name="ScoreTimer" type="Timer" parent="."]
+
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
-
-[node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -43,6 +43,7 @@ position = Vector2(240, 450)
 curve = SubResource("1")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+rotation = 0.00104493
 
 [node name="HUD" parent="." instance=ExtResource("4_0qnje")]
 
@@ -53,7 +54,7 @@ stream = ExtResource("5_55d8h")
 stream = ExtResource("6_hp1r0")
 
 [connection signal="hit" from="Player" to="." method="game_over"]
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
