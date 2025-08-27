@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1ljqcveabc0"]
+
+[ext_resource type="Script" uid="uid://bu1f3dgfmp137" path="res://point.gd" id="1_q733i"]
+[ext_resource type="Texture2D" uid="uid://csm5cggx7ns26" path="res://art/Point.png" id="2_c0ia7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35mby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c0ia7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Point" type="Area2D"]
+position = Vector2(36, 19)
+script = ExtResource("1_q733i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, 4.76837e-07)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_35mby")

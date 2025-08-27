@@ -26,13 +26,17 @@ config/icon="res://icon.webp"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1024
-window/size/window_width_override=480
-window/size/window_height_override=720
+window/size/window_width_override=1920
+window/size/window_height_override=1024
 window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="Dodge the Creeps"
+
+[global_group]
+
+bullet=""
 
 [input]
 
